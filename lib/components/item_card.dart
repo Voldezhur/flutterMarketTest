@@ -21,43 +21,49 @@ class ItemCard extends StatelessWidget {
                       ))),
           child: Container(
             width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.4,
+            height: MediaQuery.of(context).size.height * 0.2,
             decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(Radius.circular(50)),
+                borderRadius: const BorderRadius.all(Radius.circular(20)),
                 color: Theme.of(context).primaryColor),
             child: Center(
-                child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                const SizedBox(
-                  height: 20,
-                ),
                 Image.network(
                   items[itemIndex].imageLink,
-                  height: 150,
-                ),
-                Text(
-                  items[itemIndex].title,
-                  style: const TextStyle(color: Colors.white, fontSize: 24),
+                  height: 100,
                 ),
                 Container(
                   padding: const EdgeInsets.all(15),
                   decoration: const BoxDecoration(
                       border: Border(
                           top: BorderSide(color: Colors.black12, width: 2))),
-                  child: Row(
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.5,
-                        child: Text(
-                          items[itemIndex].shortDescription,
-                          style: const TextStyle(color: Colors.white),
-                        ),
-                      ),
                       // Кнопка перехода на другую страницу
+                      Column(
+                        children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width * 0.4,
+                            child: Text(
+                              items[itemIndex].title,
+                              overflow: TextOverflow.visible,
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 20),
+                            ),
+                          ),
+                          Container(
+                              width: MediaQuery.of(context).size.width * 0.4,
+                              child: Text(
+                                items[itemIndex].author,
+                                style: const TextStyle(
+                                    color: Colors.white, fontSize: 11),
+                              ))
+                        ],
+                      ),
                       Text(
-                        "Стоимость: ${items[itemIndex].price}",
+                        "Страниц: ${items[itemIndex].pageCount}",
                         style: const TextStyle(color: Colors.white),
                       ),
                     ],

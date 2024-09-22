@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Товары"),
+        title: const Text("Книги"),
       ),
       body: ListView.builder(
           itemCount: items.length,

@@ -3,11 +3,11 @@
 class Item {
   final int id;
   final String title;
-  final String shortDescription;
-  final String description;
-  final int price;
+  final String author;
+  final int pageCount;
   final String imageLink;
+  final String description;
 
-  Item(this.id, this.title, this.shortDescription, this.description, this.price,
-      this.imageLink);
+  Item(this.id, this.title, this.author, this.pageCount, this.imageLink,
+      this.description);
 }
